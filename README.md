@@ -1,16 +1,13 @@
 # sushi_client
 
-A new Flutter project.
+A Flutter client to control [sushi robot](https://github.com/jl-codes/sushi-porter)
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+To find the address of this robot on your network, run the following command:
+```
+sudo arp-scan --localnet
+```
+This device will say 'Espressif Inc.' or something similar -- use this IP address to configure this line:
+```
+final response = await http.get(Uri.parse('http://192.168.1.201/$command'));
+```
+Replace this IP address with the correct IP address
