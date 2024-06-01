@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'dart:async';
 
 void main() {
   runApp(const MyApp());
@@ -33,9 +34,10 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   String sensorData = '';
   int position = 0;
+  Timer? timer;
 
-  void sendCommand(String command) async {
-    final response = await http.get(Uri.parse('http://192.168.1.201/$command'));
+  Future<void> sendCommand(String command) async {
+    final response = await http.get(Uri.parse('http://192.168.2.77/$command'));
     if (response.statusCode == 200) {
       setState(() {
         sensorData = response.body;
@@ -62,12 +64,30 @@ class _MyHomePageState extends State<MyHomePage> {
     sendCommand('REVERSE');
   }
 
+  void returnToOriginal() {
+    sendCommand('RETURN');
+  }
+
   void goToPosition(int targetPosition) {
-    sendCommand('GOTO $targetPosition');
+    sendCommand('GOTO $targetPosition').then((_) {
+      getSensorData();
+    });
   }
 
   void getSensorData() {
     sendCommand('SENSOR');
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    timer = Timer.periodic(Duration(seconds: 2), (Timer t) => getSensorData());
+  }
+
+  @override
+  void dispose() {
+    timer?.cancel();
+    super.dispose();
   }
 
   @override
@@ -98,6 +118,10 @@ class _MyHomePageState extends State<MyHomePage> {
                 ElevatedButton(
                   onPressed: getSensorData,
                   child: Text('Get Sensor Data'),
+                ),
+                ElevatedButton(
+                  onPressed: returnToOriginal,
+                  child: Text('Return to Original Position'),
                 ),
                 SizedBox(height: 20),
                 Text(sensorData),
