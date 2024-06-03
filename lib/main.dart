@@ -12,12 +12,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Zenpo Bullet Train - General Lithium',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(title: 'Zenpo Bullet Train Sushi - General Lithium'),
     );
   }
 }
@@ -37,7 +37,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Timer? timer;
   bool isRobot1Selected = true;
 
-  String get robotIpAddress => isRobot1Selected ? '192.168.1.201' : '192.168.2.76';
+  String get robotIpAddress => isRobot1Selected ? '192.168.1.201' : '192.168.8.103';
 
   Future<void> sendCommand(String command) async {
     try {
@@ -107,164 +107,162 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: Center(
-        child: Stack(
-          children: [
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text('Robot 1'),
-                    Switch(
-                      value: isRobot1Selected,
-                      onChanged: (value) {
-                        setState(() {
-                          isRobot1Selected = value;
-                        });
-                      },
-                    ),
-                    Text('Robot 2'),
-                  ],
-                ),
-                SizedBox(height: 20),
-                Column(
-                  children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        ElevatedButton(
-                          onPressed: () {
-                            goToPosition(3);
-                          },
-                          child: Text('Go to 3'),
-                        ),
-                        ElevatedButton(
-                          onPressed: () {
-                            goToPosition(4);
-                          },
-                          child: Text('Go to 4'),
-                        ),
-                        ElevatedButton(
-                          onPressed: () {
-                            goToPosition(5);
-                          },
-                          child: Text('Go to 5'),
-                        ),
-                        ElevatedButton(
-                          onPressed: () {
-                            goToPosition(7);
-                          },
-                          child: Text('Go to 7'),
-                        ),
-                        ElevatedButton(
-                          onPressed: () {
-                            goToPosition(9);
-                          },
-                          child: Text('Go to 9'),
-                        ),
-                        ElevatedButton(
-                          onPressed: () {
-                            goToPosition(11);
-                          },
-                          child: Text('Go to 11'),
-                        ),
-                        ElevatedButton(
-                          onPressed: () {
-                            goToPosition(13);
-                          },
-                          child: Text('Go to 13'),
-                        ),
-                      ],
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        ElevatedButton(
-                          onPressed: () {
-                            goToPosition(2);
-                          },
-                          child: Text('Go to 2'),
-                        ),
-                        Spacer(),
-                        ElevatedButton(
-                          onPressed: () {
-                            goToPosition(6);
-                          },
-                          child: Text('Go to 6'),
-                        ),
-                        ElevatedButton(
-                          onPressed: () {
-                            goToPosition(8);
-                          },
-                          child: Text('Go to 8'),
-                        ),
-                        ElevatedButton(
-                          onPressed: () {
-                            goToPosition(10);
-                          },
-                          child: Text('Go to 10'),
-                        ),
-                        ElevatedButton(
-                          onPressed: () {
-                            goToPosition(12);
-                          },
-                          child: Text('Go to 12'),
-                        ),
-                        ElevatedButton(
-                          onPressed: () {
-                            goToPosition(14);
-                          },
-                          child: Text('Go to 14'),
-                        ),
-                      ],
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        ElevatedButton(
-                          onPressed: () {
-                            goToPosition(1);
-                          },
-                          child: Text('Go to 1'),
-                        ),
-                        Spacer(flex: 6),
-                      ],
-                    ),
-                  ],
-                ),
-                SizedBox(height: 20),
-                ElevatedButton(
-                  onPressed: startMotors,
-                  child: Text('Start Motors'),
-                ),
-                ElevatedButton(
-                  onPressed: stopMotors,
-                  child: Text('Stop Motors'),
-                ),
-                ElevatedButton(
-                  onPressed: reverseMotors,
-                  child: Text('Reverse Motors'),
-                ),
-                ElevatedButton(
-                  onPressed: getSensorData,
-                  child: Text('Get Sensor Data'),
-                ),
-                ElevatedButton(
-                  onPressed: returnToOriginal,
-                  child: Text('Return to Original Position'),
-                ),
-                SizedBox(height: 20),
-                Text(sensorData),
-              ],
-            ),
-            Positioned(
-              left: 10,
-              bottom: 10,
-              child: Text('Position: $position',
-                  style: TextStyle(fontSize: 20, color: Colors.black)),
-            ),
-          ],
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text('Robot 1'),
+                      Switch(
+                        value: isRobot1Selected,
+                        onChanged: (value) {
+                          setState(() {
+                            isRobot1Selected = value;
+                          });
+                        },
+                      ),
+                      Text('Robot 2'),
+                    ],
+                  ),
+                  SizedBox(height: 20),
+                  Column(
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          ElevatedButton(
+                            onPressed: () {
+                              goToPosition(3);
+                            },
+                            child: Text('Go to 3'),
+                          ),
+                          ElevatedButton(
+                            onPressed: () {
+                              goToPosition(4);
+                            },
+                            child: Text('Go to 4'),
+                          ),
+                          ElevatedButton(
+                            onPressed: () {
+                              goToPosition(5);
+                            },
+                            child: Text('Go to 5'),
+                          ),
+                          ElevatedButton(
+                            onPressed: () {
+                              goToPosition(7);
+                            },
+                            child: Text('Go to 7'),
+                          ),
+                          ElevatedButton(
+                            onPressed: () {
+                              goToPosition(9);
+                            },
+                            child: Text('Go to 9'),
+                          ),
+                          ElevatedButton(
+                            onPressed: () {
+                              goToPosition(11);
+                            },
+                            child: Text('Go to 11'),
+                          ),
+                          ElevatedButton(
+                            onPressed: () {
+                              goToPosition(13);
+                            },
+                            child: Text('Go to 13'),
+                          ),
+                        ],
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          ElevatedButton(
+                            onPressed: () {
+                              goToPosition(2);
+                            },
+                            child: Text('Go to 2'),
+                          ),
+                          Spacer(),
+                          ElevatedButton(
+                            onPressed: () {
+                              goToPosition(6);
+                            },
+                            child: Text('Go to 6'),
+                          ),
+                          ElevatedButton(
+                            onPressed: () {
+                              goToPosition(8);
+                            },
+                            child: Text('Go to 8'),
+                          ),
+                          ElevatedButton(
+                            onPressed: () {
+                              goToPosition(10);
+                            },
+                            child: Text('Go to 10'),
+                          ),
+                          ElevatedButton(
+                            onPressed: () {
+                              goToPosition(12);
+                            },
+                            child: Text('Go to 12'),
+                          ),
+                          ElevatedButton(
+                            onPressed: () {
+                              goToPosition(14);
+                            },
+                            child: Text('Go to 14'),
+                          ),
+                        ],
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          ElevatedButton(
+                            onPressed: () {
+                              goToPosition(1);
+                            },
+                            child: Text('Go to 1'),
+                          ),
+                          Spacer(flex: 6),
+                        ],
+                      ),
+                    ],
+                  ),
+                  SizedBox(height: 20),
+                  ElevatedButton(
+                    onPressed: startMotors,
+                    child: Text('Start Motors'),
+                  ),
+                  ElevatedButton(
+                    onPressed: stopMotors,
+                    child: Text('Stop Motors'),
+                  ),
+                  ElevatedButton(
+                    onPressed: reverseMotors,
+                    child: Text('Reverse Motors'),
+                  ),
+                  ElevatedButton(
+                    onPressed: returnToOriginal,
+                    child: Text('Return to Original Position'),
+                  ),
+                  SizedBox(height: 20),
+                  Text(sensorData),
+                ],
+              ),
+//               Positioned(
+//                 left: 10,
+//                 bottom: 10,
+//                 child: Text('Position: $position',
+//                     style: TextStyle(fontSize: 20, color: Colors.black)),
+//               ),
+            ],
+          ),
         ),
       ),
     );
