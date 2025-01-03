@@ -37,7 +37,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Timer? timer;
   bool isRobot1Selected = true;
 
-  String get robotIpAddress => isRobot1Selected ? '192.168.1.201' : '192.168.8.103';
+  String get robotIpAddress => isRobot1Selected ? '192.168.1.201' : '192.168.1.207';
 
   Future<void> sendCommand(String command) async {
     try {
@@ -134,47 +134,53 @@ class _MyHomePageState extends State<MyHomePage> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          ElevatedButton(
-                            onPressed: () {
-                              goToPosition(3);
-                            },
-                            child: Text('Go to 3'),
-                          ),
-                          ElevatedButton(
-                            onPressed: () {
-                              goToPosition(4);
-                            },
-                            child: Text('Go to 4'),
-                          ),
+                          // ElevatedButton(
+                          //   onPressed: () {
+                          //     goToPosition(3);
+                          //   },
+                          //   child: Text('Go to 3'),
+                          // ),
+                          // ElevatedButton(
+                          //   onPressed: () {
+                          //     goToPosition(4);
+                          //   },
+                          //   child: Text('Go to 4'),
+                          // ),
                           ElevatedButton(
                             onPressed: () {
                               goToPosition(5);
                             },
-                            child: Text('Go to 5'),
-                          ),
-                          ElevatedButton(
-                            onPressed: () {
-                              goToPosition(7);
-                            },
-                            child: Text('Go to 7'),
-                          ),
-                          ElevatedButton(
-                            onPressed: () {
-                              goToPosition(9);
-                            },
-                            child: Text('Go to 9'),
-                          ),
-                          ElevatedButton(
-                            onPressed: () {
-                              goToPosition(11);
-                            },
-                            child: Text('Go to 11'),
+                            child: Text('Go to 14'),
                           ),
                           ElevatedButton(
                             onPressed: () {
                               goToPosition(13);
                             },
                             child: Text('Go to 13'),
+                          ),
+                          ElevatedButton(
+                            onPressed: () {
+                              goToPosition(8);
+                            },
+                            child: Text('Go to 12'),
+                          ),
+                          ElevatedButton(
+                            onPressed: () {
+                              goToPosition(10);
+                            },
+                            child: Text('Go to 11'),
+                          ),
+                          ElevatedButton(
+                            onPressed: () {
+                              goToPosition(12);
+                            },
+                            child: Text('Go to 10'),
+                          ),
+                          ElevatedButton(
+                            onPressed: () {
+                              goToPosition(15);
+                            },
+                            child: Text('Go to 9'),
                           ),
                         ],
                       ),
@@ -192,31 +198,31 @@ class _MyHomePageState extends State<MyHomePage> {
                             onPressed: () {
                               goToPosition(6);
                             },
+                            child: Text('Go to 3'),
+                          ),
+                          ElevatedButton(
+                            onPressed: () {
+                              goToPosition(7);
+                            },
+                            child: Text('Go to 4'),
+                          ),
+                          ElevatedButton(
+                            onPressed: () {
+                              goToPosition(9);
+                            },
+                            child: Text('Go to 5'),
+                          ),
+                          ElevatedButton(
+                            onPressed: () {
+                              goToPosition(11);
+                            },
                             child: Text('Go to 6'),
-                          ),
-                          ElevatedButton(
-                            onPressed: () {
-                              goToPosition(8);
-                            },
-                            child: Text('Go to 8'),
-                          ),
-                          ElevatedButton(
-                            onPressed: () {
-                              goToPosition(10);
-                            },
-                            child: Text('Go to 10'),
-                          ),
-                          ElevatedButton(
-                            onPressed: () {
-                              goToPosition(12);
-                            },
-                            child: Text('Go to 12'),
-                          ),
+                          ),                          
                           ElevatedButton(
                             onPressed: () {
                               goToPosition(14);
                             },
-                            child: Text('Go to 14'),
+                            child: Text('Go to 7'),
                           ),
                         ],
                       ),
